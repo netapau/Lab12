@@ -9,8 +9,8 @@ namespace Lab12
     [Activity(Label = "Lab12", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        private const string Password = "**********************";
-        private const string StudentEmail = "**********@hotmail.com";
+        private const string Password       = "i_am_p4$$w02d";
+        private const string StudentEmail   = "i_am_user@mailserver.org";
 
         protected override async void OnCreate(Bundle bundle)
         {
@@ -22,7 +22,7 @@ namespace Lab12
             var ValidationText = FindViewById<TextView>(Resource.Id.ValidationTextView);
 
             //ValidationText.Text = await ValidateActivityAsync();
-            ValidationText.Text = await MookValidateAsync();
+            ValidationText.Text = await MockValidateAsync();
 
             var ListColors = FindViewById<ListView>(Resource.Id.ColorsListView);
             ListColors.Adapter = new CustomAdapters.ColorAdapter(
@@ -49,7 +49,7 @@ namespace Lab12
         /// <summary>
         /// | Test Validacion XamarinDiplomado3.0 |
         /// </summary>
-        private async Task<string> MookValidateAsync()
+        private async Task<string> MockValidateAsync()
         {
             await Task.Delay(2000);
             return $"Mook-Success\nTony Simoes\n{StudentEmail}\n{Password}\nMS-0-1-2-00-000-0-1\nXamarinDiplomado3.0-Lab12";
