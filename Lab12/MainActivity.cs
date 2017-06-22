@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab12
 {
-    [Activity(Label = "Lab12", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "designer", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         private const string Password = "i_am_p4$$w02d";

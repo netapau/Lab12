@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <TextView
         android:id="@+id/ValidationTextView"
-        android:text="Texto de validacion"
+				android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
