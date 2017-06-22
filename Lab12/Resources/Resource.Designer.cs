@@ -28,6 +28,10 @@ namespace Lab12
 		{
 			global::CustomAdapters.Resource.String.ApplicationName = global::Lab12.Resource.String.ApplicationName;
 			global::CustomAdapters.Resource.String.Hello = global::Lab12.Resource.String.Hello;
+			global::PCLCrypto.Resource.String.ApplicationName = global::Lab12.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::Lab12.Resource.String.Hello;
+			global::SALLab12.Resource.String.ApplicationName = global::Lab12.Resource.String.ApplicationName;
+			global::SALLab12.Resource.String.Hello = global::Lab12.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
