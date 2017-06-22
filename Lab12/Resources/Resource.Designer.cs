@@ -26,6 +26,8 @@ namespace Lab12
 		
 		public static void UpdateIdValues()
 		{
+			global::CustomAdapters.Resource.String.ApplicationName = global::Lab12.Resource.String.ApplicationName;
+			global::CustomAdapters.Resource.String.Hello = global::Lab12.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
