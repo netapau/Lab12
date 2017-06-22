@@ -9,8 +9,8 @@ namespace Lab12
     [Activity(Label = "Lab12", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        private const string Password       = "i_am_p4$$w02d";
-        private const string StudentEmail   = "i_am_user@mailserver.org";
+        private const string Password = "i_am_p4$$w02d";
+        private const string StudentEmail = "i_am_user@mailserver.org";
 
         protected override async void OnCreate(Bundle bundle)
         {
@@ -21,8 +21,8 @@ namespace Lab12
 
             var ValidationText = FindViewById<TextView>(Resource.Id.ValidationTextView);
 
-            //ValidationText.Text = await ValidateActivityAsync();
-            ValidationText.Text = await MockValidateAsync();
+            ValidationText.Text = await ValidateActivityAsync();
+            //ValidationText.Text = await MockValidateAsync();
 
             var ListColors = FindViewById<ListView>(Resource.Id.ColorsListView);
             ListColors.Adapter = new CustomAdapters.ColorAdapter(
