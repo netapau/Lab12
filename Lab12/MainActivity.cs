@@ -20,7 +20,6 @@ namespace Lab12
             SetContentView (Resource.Layout.Main);
 
             var ValidationText = FindViewById<TextView>(Resource.Id.ValidationTextView);
-
             ValidationText.Text = await ValidateActivityAsync();
             //ValidationText.Text = await MockValidateAsync();
 
@@ -51,7 +50,7 @@ namespace Lab12
         /// </summary>
         private async Task<string> MockValidateAsync()
         {
-            await Task.Delay(2000);
+            await Task.Delay(1000);
             return $"Mook-Success\nTony Simoes\n{StudentEmail}\n{Password}\nMS-0-1-2-00-000-0-1\nXamarinDiplomado3.0-Lab12";
         }
     }
