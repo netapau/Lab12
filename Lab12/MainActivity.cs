@@ -9,19 +9,20 @@ namespace Lab12
     [Activity(Label = "designer", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        private const string Password = "i_am_p4$$w02d";
-        private const string StudentEmail = "i_am_user@mailserver.org";
+        private const string Password       =  "i_am_p4$$w02d";
+        private const string StudentEmail   =  "i_am_user@mailserver.org";
+        TextView ValidacionTextView;
 
-        protected override async void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
 
-            var ValidationText = FindViewById<TextView>(Resource.Id.ValidationTextView);
-            ValidationText.Text = await ValidateActivityAsync();
-            //ValidationText.Text = await MockValidateAsync();
+            ValidacionTextView = FindViewById<TextView>(Resource.Id.ValidationTextView);
+            //ValidacionAsync();
+            MockValidateAsync();
 
             var ListColors = FindViewById<ListView>(Resource.Id.ColorsListView);
             ListColors.Adapter = new CustomAdapters.ColorAdapter(
@@ -32,27 +33,21 @@ namespace Lab12
                 Resource.Id.ColorImageView);
         }
 
-        /// <summary>
-        /// | Validacion Lab12 XamarinDiplomado 3.0 |
-        /// </summary>
-        private async Task<string> ValidateActivityAsync()
+        private async void ValidacionAsync()
         {
-            ServiceClient Seviceclient = new ServiceClient();
-
+            ServiceClient Seviceclient = new ServiceClient(); // Validation
             string MyDevice = Android.Provider.Settings.Secure.GetString(ContentResolver, Android.Provider.Settings.Secure.AndroidId);
-
             var Result = await Seviceclient.ValidateAsync(StudentEmail, Password, MyDevice);
-            return $"{Result.Status}\n{Result.FullName}\n{Result.Token}\n";
+            ValidacionTextView.Text = $"{Result.Status}\n{Result.FullName}\n{Result.Token}\n";
         }
 
         /// <summary>
         /// | Test Validacion XamarinDiplomado3.0 |
         /// </summary>
-        private async Task<string> MockValidateAsync()
+        private async void MockValidateAsync()
         {
             await Task.Delay(1000);
-            return $"Mook-Success\nTony Simoes\n{StudentEmail}\n{Password}\nMS-0-1-2-00-000-0-1\nXamarinDiplomado3.0-Lab12";
+            ValidacionTextView.Text = $"Mook-Success\nTony Simoes\nMS-0-0-0-00-000-0-1\nXamarinDiplomado3.0-Lab12";
         }
     }
 }
-
